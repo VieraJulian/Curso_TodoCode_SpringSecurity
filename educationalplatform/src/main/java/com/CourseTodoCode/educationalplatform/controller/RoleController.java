@@ -60,9 +60,13 @@ public class RoleController {
                 }
             }
 
-            role.setPermissionsList(permissionsList);
-            Role roleNew = roleService.save(role);
-            return new ResponseEntity<>(roleNew, HttpStatus.CREATED);
+            if (!permissionsList.isEmpty()) {
+                role.setPermissionsList(permissionsList);
+                Role roleNew = roleService.save(role);
+                return new ResponseEntity<>(roleNew, HttpStatus.CREATED);
+            }
+
+            return null;
 
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
