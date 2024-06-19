@@ -12,4 +12,5 @@ public interface IUserService {
     public UserEntity save(UserEntity userEntity);
     public Optional<UserEntity> update(Long id, UserEntity userEntity);
     public void deleteById(Long id);
+    public String encryptPassword(String password);
 }

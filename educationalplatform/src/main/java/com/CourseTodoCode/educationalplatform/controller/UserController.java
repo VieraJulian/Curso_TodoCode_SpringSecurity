@@ -52,6 +52,8 @@ public class UserController {
             Set<Role> roleList = new HashSet<>();
             Role roleRead;
 
+            user.setPassword(userService.encryptPassword(user.getPassword()));
+
             for (Role role : user.getRoleList()) {
                 roleRead = roleService.findById(role.getId()).orElse(null);
 
