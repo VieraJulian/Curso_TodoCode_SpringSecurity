@@ -46,7 +46,7 @@ public class UserController {
         }
     }
 
-    @GetMapping
+    @PostMapping
     public ResponseEntity<UserEntity> createUser(@RequestBody UserEntity user) {
         try {
             Set<Role> roleList = new HashSet<>();

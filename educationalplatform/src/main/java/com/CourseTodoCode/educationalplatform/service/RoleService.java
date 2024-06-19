@@ -30,7 +30,7 @@ public class RoleService implements IRoleService{
     }
 
     @Override
-    public Optional<Object> update(Long id, Role role) {
+    public Optional<Role> update(Long id, Role role) {
         Optional<Role> roleDB = roleRepository.findById(id);
 
         if (roleDB.isPresent()) {
